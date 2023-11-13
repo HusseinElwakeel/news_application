@@ -1,8 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:news_application/Models/CategoryModel.dart';
 import 'package:news_application/Widgets/CategoryWidget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
+  final List<CategoryModel> CategoryItem =
+      //make it const to not remove const in home screen
+      const [
+    CategoryModel(Image: "assets/images/business.avif", Text: "business"),
+    CategoryModel(
+        Image: "assets/images/entertaiment.avif", Text: "entertaiment"),
+    CategoryModel(Image: "assets/images/general.avif", Text: "general"),
+    CategoryModel(Image: "assets/images/health.avif", Text: "health"),
+    CategoryModel(Image: "assets/images/science.avif", Text: "science"),
+    CategoryModel(Image: "assets/images/sports.avif", Text: "sports"),
+    CategoryModel(Image: "assets/images/technology.jpeg", Text: "technology"),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +42,14 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      body: CategoryWidget(),
+      body: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children:
+              CategoryItem.map((catogery) => CategoryWidget(catogery: catogery))
+                  .toList(),
+        ),
+      ),
     );
   }
 }
