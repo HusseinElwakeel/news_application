@@ -7,7 +7,10 @@ class NewsListViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        physics: BouncingScrollPhysics(),
+        //to build all Listview together and it's problem because it will lead to loading in the problem
+        shrinkWrap: true,
+        // we will make it never because CustomScrollView have its  scroll
+        physics: NeverScrollableScrollPhysics(),
         itemCount: 10,
         itemBuilder: (context, index) => NewsItem());
   }

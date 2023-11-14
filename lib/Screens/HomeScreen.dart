@@ -47,12 +47,21 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      body: Column(
-        children: [
-          CategoryListViewWidget(
-            Catergory: CategoryItem,
+      body:
+          //to build a customize the screen
+          CustomScrollView(
+        //to make smooth screen
+        physics: BouncingScrollPhysics(),
+        slivers: [
+          //CustomScrollView should take SliverToBoxAdapter(child: what U want to buuild)
+          SliverToBoxAdapter(
+            child: CategoryListViewWidget(
+              Catergory: CategoryItem,
+            ),
           ),
-          Expanded(child: NewsListViewWidget()),
+          SliverToBoxAdapter(
+            child: NewsListViewWidget(),
+          ),
         ],
       ),
     );
