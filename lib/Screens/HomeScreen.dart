@@ -4,7 +4,7 @@ import 'package:news_application/Widgets/CategoryWidget.dart';
 import 'package:news_application/Widgets/NewsListViewWidget.dart';
 import 'package:news_application/Widgets/NewsWidget.dart';
 
-import '../Widgets/Category ListView builder.dart';
+import '../Widgets/CategoryListViewWidget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -49,16 +49,12 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          ListViewCategory(
+          CategoryListViewWidget(
             Catergory: CategoryItem,
           ),
-          Expanded(
-            child:
-            NewsListViewWidget()
-          ),
+          Expanded(child: NewsListViewWidget()),
         ],
       ),
-
     );
   }
 }

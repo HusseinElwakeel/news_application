@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:news_application/Models/CategoryModel.dart';
 import 'package:news_application/Widgets/CategoryWidget.dart';
 
-class ListViewCategory extends StatelessWidget {
-  const ListViewCategory({super.key, required this.Catergory});
+class CategoryListViewWidget extends StatelessWidget {
+  const CategoryListViewWidget({super.key, required this.Catergory});
   final List Catergory;
 
   @override
