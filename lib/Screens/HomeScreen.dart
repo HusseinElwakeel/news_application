@@ -52,6 +52,7 @@ class HomeScreen extends StatelessWidget {
           CustomScrollView(
         //to make smooth screen
         physics: BouncingScrollPhysics(),
+        //slivers = children
         slivers: [
           //CustomScrollView should take SliverToBoxAdapter(child: what U want to buuild)
           SliverToBoxAdapter(
@@ -59,9 +60,10 @@ class HomeScreen extends StatelessWidget {
               Catergory: CategoryItem,
             ),
           ),
-          SliverToBoxAdapter(
-            child: NewsListViewWidget(),
-          ),
+          NewsListViewWidget(),
+          // SliverToBoxAdapter(
+          //   child: NewsListViewWidget(),
+          // ),
         ],
       ),
     );
