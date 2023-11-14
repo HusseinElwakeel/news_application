@@ -11,6 +11,7 @@ class CategoryListViewWidget extends StatelessWidget {
     return SizedBox(
       height: 150,
       child: ListView.builder(
+        physics: BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
           itemCount: Catergory.length,
           itemBuilder: (context, index) => CategoryWidget(
