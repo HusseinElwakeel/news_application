@@ -1,6 +1,5 @@
 // make widget for the category
 import 'package:flutter/material.dart';
-
 import '../Models/CategoryModel.dart';
 
 class CategoryWidget extends StatelessWidget {
@@ -19,8 +18,7 @@ class CategoryWidget extends StatelessWidget {
           color: Colors.yellowAccent,
           //to add image to container:
           image: DecorationImage(
-              image: AssetImage(catogery.Image),
-              fit: BoxFit.fill),
+              image: AssetImage(catogery.Image), fit: BoxFit.fill),
         ),
         child: Center(
           child: Text(
