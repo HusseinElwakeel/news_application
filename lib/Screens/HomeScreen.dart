@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_application/Models/CategoryModel.dart';
 import 'package:news_application/Widgets/CategoryWidget.dart';
+import 'package:news_application/Widgets/NewsListViewWidget.dart';
 import 'package:news_application/Widgets/NewsWidget.dart';
 
 import '../Widgets/Category ListView builder.dart';
@@ -52,10 +53,8 @@ class HomeScreen extends StatelessWidget {
             Catergory: CategoryItem,
           ),
           Expanded(
-            child: ListView.builder(
-              itemCount: 10,
-              itemBuilder: (context, index) =>NewsItem()
-            ),
+            child:
+            NewsListViewWidget()
           ),
         ],
       ),
