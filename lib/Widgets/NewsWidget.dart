@@ -6,22 +6,23 @@ class NewsItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(12.0),
+      padding: const EdgeInsets.all(9.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Container(
-            height: 250,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  fit: BoxFit.fill,
-                  image: AssetImage("assets/images/general.avif")),
-              borderRadius: BorderRadius.circular(20),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(18),
+            child: Image.network(
+              "https://cdn.dribbble.com/users/1454140/screenshots/3828303/news-dashboard-display_copy.png?compress=1&resize=400x300&vertical=top",
+              height: 350,
+              width: double.infinity,
+              fit: BoxFit.fill,
             ),
           ),
-          SizedBox(height: 8,),
+          SizedBox(
+            height: 8,
+          ),
           Text(
             "Hussein Elwakeel",
             maxLines: 2,
@@ -31,7 +32,9 @@ class NewsItem extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
             ),
           ),
-          SizedBox(height: 8,),
+          SizedBox(
+            height: 8,
+          ),
           Text(
             "dataaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
             maxLines: 2,
@@ -39,6 +42,13 @@ class NewsItem extends StatelessWidget {
               color: Colors.grey,
               overflow: TextOverflow.ellipsis,
             ),
+          ),
+          SizedBox(
+            height: 8,
+          ),
+          Divider(
+            color: Colors.black,
+            thickness: 1,
           ),
         ],
       ),
