@@ -8,11 +8,14 @@ class ListViewCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: Catergory.length,
-        itemBuilder: (context, index) => CategoryWidget(
-              catogery: Catergory[index],
-            ));
+    return SizedBox(
+      height: 150,
+      child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: Catergory.length,
+          itemBuilder: (context, index) => CategoryWidget(
+                catogery: Catergory[index],
+              )),
+    );
   }
 }

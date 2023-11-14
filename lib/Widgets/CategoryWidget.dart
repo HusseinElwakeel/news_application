@@ -11,11 +11,10 @@ class CategoryWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(9.0),
       child: Container(
-        height: 120,
+        height: 150,
         width: 200,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: Colors.yellowAccent,
           //to add image to container:
           image: DecorationImage(
               image: AssetImage(catogery.Image), fit: BoxFit.fill),
