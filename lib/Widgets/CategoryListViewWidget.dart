@@ -11,12 +11,16 @@ class CategoryListViewWidget extends StatelessWidget {
     return SizedBox(
       height: 150,
       child: ListView.builder(
-        physics: BouncingScrollPhysics(),
+          physics: BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
           itemCount: Catergory.length,
           itemBuilder: (context, index) => CategoryWidget(
                 catogery: Catergory[index],
               )),
     );
+  }
+
+  void sum2nums(num1, num2) {
+    return num1 + num2;
   }
 }
