@@ -3,15 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:news_application/Screens/HomeScreen.dart';
 import 'package:news_application/Services/NewsServices.dart';
 
-void main() {
-  getNews();
+void main() async {
   runApp(const MyApp());
-}
-final dio = Dio();
-
-void getNews() async {
-  final response = await dio.get('https://newsapi.org/v2/top-headlines?apikey=788c7ef99218431a9bb511b97cc976aa&language=ar#');
-  print(response);
 }
 
 class MyApp extends StatelessWidget {
@@ -24,7 +17,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: false,
       ),
@@ -32,5 +24,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
