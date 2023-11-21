@@ -5,6 +5,8 @@ import 'package:news_application/Services/NewsServices.dart';
 
 void main() async {
   runApp(const MyApp());
+  // call services . method i wanted to print and do Dio() because i want its dont have name
+  NewsServices(Dio()).getGeneralNews();
 }
 
 class MyApp extends StatelessWidget {

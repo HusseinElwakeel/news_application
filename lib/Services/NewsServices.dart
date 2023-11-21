@@ -16,10 +16,23 @@ class NewsServices {
         "https://newsapi.org/v2/top-headlines?country=eg&apiKey=788c7ef99218431a9bb511b97cc976aa&category=general");
     print(response);
     // to see json response data
-    var jsonData = response.data;
+    //var jsonData = response.data;
     // go to link of api response  and see the data we will find it map key "status","articles","totalResults"
     //and value is list or number or string (dynamic) so do next
     //or do that :
-    // Map<String ,dynamic> jsonData =response.data;
+    Map<String, dynamic> jsonData = response.data;
+    print(jsonData["totalResults"]); //to print data in json
+    // in jsonData we use  dynamic List<dynamic> in list and Map<String ,dynamic> in map
+
+    List<dynamic> articlesData = jsonData["articles"];
+    print(articlesData);
+
+    // to change data type use as + new data type
+
+    //to print the artical only and its name
+    for (var artical in articlesData) {
+      print(artical);
+      print(artical["name"]);
+    }
   }
 }
