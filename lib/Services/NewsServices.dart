@@ -1,9 +1,11 @@
 import 'package:dio/dio.dart';
+import 'package:news_application/Models/ArticleModel.dart';
 
 class NewsServices {
   final Dio dio;
 
   NewsServices(this.dio);
+
   // i want to Make response (type response ) and async because it will take Time
   // and i will use dio to get data
   // go to API and go to EndPoints and see what i want
@@ -25,14 +27,31 @@ class NewsServices {
     // in jsonData we use  dynamic List<dynamic> in list and Map<String ,dynamic> in map
 
     List<dynamic> articlesData = jsonData["articles"];
-    print(articlesData);
+
+    //transfer map  to object
+    List<ArticleModel> articlesList = [];
+    for (var article in articlesData) {
+      //make object of items
+      ArticleModel articleModel = ArticleModel(
+          articleName: article["articleName"],
+          articleDetails: article["description"],
+          articleImage: article["urlToImage"]);
+      articlesList.add(articleModel);
+    }
+    print(articlesList);
+
+    // print(articlesData);
 
     // to change data type use as + new data type
 
     //to print the artical only and its name
-    for (var artical in articlesData) {
-      print(artical);
-      print(artical["name"]);
-    }
+    // for (var article in articlesData) {
+    //   print(article["$artics"]);
+    //   //   print(artical["name"]);
+    //   // }
+    //   //
+    // }
+
+
   }
 }
