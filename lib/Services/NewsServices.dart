@@ -28,14 +28,16 @@ class NewsServices {
 
     List<dynamic> articlesData = jsonData["articles"];
 
-    //transfer map  to object
+    //transfer map  to object(important)
     List<ArticleModel> articlesList = [];
     for (var article in articlesData) {
       //make object of items
       ArticleModel articleModel = ArticleModel(
           articleName: article["articleName"],
           articleDetails: article["description"],
-          articleImage: article["urlToImage"]);
+          articleImage: article["urlToImage"],
+       source: Source(id: article["source"]["id"], name: article["source"]["name"])
+      );
       articlesList.add(articleModel);
     }
     print(articlesList);

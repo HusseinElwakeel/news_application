@@ -59,6 +59,7 @@ class HomeScreen extends StatelessWidget {
             child: CategoryListViewWidget(
               Catergory: CategoryItem,
             ),
+
           ),
           NewsListViewWidget(),
           // SliverToBoxAdapter(
